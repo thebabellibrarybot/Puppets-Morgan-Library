@@ -1,0 +1,4 @@
+### Web Scrappers for Morgan Library
+
+Scraps data via puppeteer to find unscructured MARC data for tombs with digital manuscripts from the morgan library.
+Generates a mySQL DB for each digital tomb, turning the unstrucuted langauge data into organized classes and tables.
