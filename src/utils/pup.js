@@ -1,8 +1,13 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
 
+function sanitizeString(str) {
+  if (typeof str === 'string' || str instanceof String) {
+    return str.replace(/\./g, '/').replace(/,/g, '/').replace(/\n/g, '/').replace(/\+/g, '/');
+  } else {
+    return '';
+  }
+}
 
 // gets the book title from the url
 // param: str - the url of the page to scrape
@@ -17,12 +22,16 @@ function extractFilenameFromUrl(url) {
 // append the data to a csv file
 // param: obj - the data to appen
 function appendToCSVFile(filePath, data) {
-  const title = extractFilenameFromUrl(data.firstImgUrl);
-  const csvRow = `${title},${data.firstImgUrl},${data.paragraphTexts[0]},${data.paragraphTexts[1]}\n`;
+  const folio = extractFilenameFromUrl(data.firstImgUrl);
+  const tombId = folio.split('.')[0];
+  const tomb_text = sanitizeString(data.paragraphTexts[0]);
+  const folio_text = sanitizeString(data.paragraphTexts[1]);
+  const leaf_num = folio.split('.')[1];
+  const csvRow = `${folio},${leaf_num},${tombId},${data.firstImgUrl},${tomb_text},${folio_text}\n`;
 
   if (!fs.existsSync(filePath)) {
     console.log('File does not exist, creating new file')
-    const header = 'title,tomb,tomb_text,folio_text\n';
+    const header = 'folio,leaf_num,tombId,folio_url,tomb_text,folio_text\n';
     fs.writeFileSync(filePath, header);
   }
 
