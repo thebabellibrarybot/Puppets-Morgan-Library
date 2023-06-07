@@ -3,9 +3,38 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
+
+// gets the book title from the url
+// param: str - the url of the page to scrape
+function extractFilenameFromUrl(url) {
+  const lastSlashIndex = url.lastIndexOf('/');
+  const filenameWithExtension = url.substring(lastSlashIndex + 1);
+  const filenameWithoutExtension = filenameWithExtension.replace('.jpg', '');
+
+  return filenameWithoutExtension;
+}
+
+// append the data to a csv file
+// param: obj - the data to appen
+function appendToCSVFile(filePath, data) {
+  const title = extractFilenameFromUrl(data.firstImgUrl);
+  const csvRow = `${title},${data.firstImgUrl},${data.paragraphTexts[0]},${data.paragraphTexts[1]}\n`;
+
+  if (!fs.existsSync(filePath)) {
+    console.log('File does not exist, creating new file')
+    const header = 'title,tomb,tomb_text,folio_text\n';
+    fs.writeFileSync(filePath, header);
+  }
+
+  fs.appendFileSync(filePath, csvRow);
+  console.log(`Data appended to ${filePath}`);
+}
+
 // will find an image url with data
 // param: str - the url of the page to scrape
-async function scrapeData(url) {
+// return: obj - { firstImgUrl: str, paragraphTexts: [book_info, page_info] }
+          // TODO: I CAN GET MARC DATA FROM THESE URLS!! 
+async function scrapeFolioData(url, outputPath) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
@@ -16,7 +45,9 @@ async function scrapeData(url) {
     const firstImgUrl = imgElement ? imgElement.src : '';
 
     const pElements = Array.from(divElement.querySelectorAll('p'));
-    const paragraphTexts = pElements.map((p) => p.textContent.trim());
+    const paragraphTexts = pElements
+      .filter((p) => p.textContent.trim() !== '' && p.textContent.trim() !== 'See more information »')
+      .map((p) => p.textContent.trim());
 
     return {
       firstImgUrl,
@@ -26,23 +57,23 @@ async function scrapeData(url) {
 
   await browser.close();
 
+  if (outputPath) {
+    const outputText = JSON.stringify(data.firstImgUrl) + '\n';
+    fs.appendFile(outputPath, outputText, (err) => {
+      if (err) {
+        console.error('Error appending to file:', err);
+      } else {
+        console.log(`Data appended to ${outputPath}`);
+      }
+    });
+  }
+
   return data;
 }
 
-// Usage example
-const pracUrl = 'http://ica.themorgan.org/manuscript/page/1/76787'
-scrapeData(pracUrl)
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error('An error occurred:', error);
-  });
-
-
-// will download an image into the base dir
+// will find all image pages for a given manuscript
 // param: str - the url of the page to scrape
-async function scrapeTombHrefs(url) {
+async function scrapeTombHrefs(url, outputFile) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
@@ -70,25 +101,13 @@ async function scrapeTombHrefs(url) {
   }
 
   return hrefs;
-}
+};
 
-// Usage example 
-/*
-const pracUrl = 'http://ica.themorgan.org/manuscript/thumbs/76787'
-const outputFile = './tombs_images.txt'; // Replace with the desired output file path (optional)
-scrapeTombHrefs(pracUrl, outputFile)
-  .then((hrefs) => {
-    console.log(hrefs);
-  })
-  .catch((error) => {
-    console.error('An error occurred:', error);
-  });
-*/
-
-// will scrape the hrefs from the page
+// will scrape the hrefs from the MAIN table page
 // param: str - the url of the page to scrape
 // param: outputPath - the path to the output file (optional)
 async function scrapeMorganTable(url, outputPath) {
+  console.log('launcing')
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
@@ -119,8 +138,12 @@ async function scrapeMorganTable(url, outputPath) {
   } else {
     console.log(hrefs);
   }
-}
-// Usage example
-//const outputFile = './tombs_w_images.txt'; // Replace with the desired output file path (optional)
-//const targetUrl = 'https://www.themorgan.org/manuscripts/list'; // Replace with the desired URL
-//scrapeMorganTable(targetUrl, outputFile);
+  return hrefs;
+};
+
+module.exports = {
+  scrapeMorganTable,
+  scrapeTombHrefs,
+  scrapeFolioData,
+  appendToCSVFile
+};
