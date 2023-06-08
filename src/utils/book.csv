@@ -1,8 +1,8 @@
 tomb_id,book_type,book_location,book_date
 b1,Chapelet de virginité,France,1475
-b12,Kalendarium cum tabulis planetarum et eclipsumEngland,,1425
+b12,Kalendarium cum tabulis planetarum et eclipsum,England,1425
 b15,La pratica de mesurar le terre,Italy,1500
-b17,Liber ruralium commodorumEngland,,1400,1430
+b17,Liber ruralium commodorum,England,1400,1430
 b19,Cuoco napolitano,Italy,1400
 b20,Literalis expositio super Apocalypsim / Fredericus de Venetiis,Italy,1456
 b21,Medical miscellanyEngland/ ,East Anglia,1400,1450
@@ -10,12 +10,12 @@ b22,Vie de Sainte MargueriteNorthern ,France,1460,1499
 b25,Laude spiritualiNorthern ,Italy,1450,1475
 b27,Medical and astronomical texts,Germany,1450,1475
 b28,Calendar and astronomical texts,Germany,1458,1476
-b30,Genealogical chronicle roll of the kings of England to Edward IVProbably England,,1465,1469
+b30,Genealogical chronicle roll of the kings of ,England,1465,1469
 b32,Devotional miscellany,Spain,1461
 b38,De re uxoria,Italy,1430
 b52,Sermones de sanctis,Italy,1400
-77178v_0002,Arma ChristiEngland,,1400
-77178v_0003,Arma ChristiEngland,,1400
+77178v_0002,Arma Christi,England,1400
+77178v_0003,Arma Christi,England,1400
 b60,Régime du corps,Italy,1430,1460
 g1,Book of Hours,France,1475
 g2,Psalter,France,1260,1280
@@ -23,17 +23,16 @@ g3,Antiphonary,France,1400
 g4,Book of Hours,France,1400
 g5,Book of Hours,Netherlands,1500
 g6,Homiliae in Ezechielem,France,1110
-g8,,,
-g9,Book of HoursEngland,,1440,1450
+g9,Book of Hours,England,1440,1450
 g10,Book of Hours,Belgium,1490
 g13,Breviary,Germany,1477
 g14,Book of Hours,Italy,1470,1480
 g16,Missal,Italy,1300,1375,1399
 g17,Missal,France,1100,1120
-g18,BibleEngland,,1240
+g18,Bible,England,1240
 g22,Tusculanarum disputationum,Italy,1460
 g23,Literary,France,1474
-g25,PsalterEngland,,1225
+g25,Psalter,England,1225
 g27,Sacramentary,Switzerland,
 g31,Bible,France,1250
 g32,Roman de la Rose,Belgium,1390
@@ -41,25 +40,24 @@ g35,Cas des nobles hommes et femmes malheureux,France,1480
 g36,Libro degli uomini famosi,Italy,1405
 g37,Two miniatures/ possibly from a decretals,France,1230,1260
 g38,Initial: Jerome/ Epistle to Paulinus/Bologna/ ,Italy,1270
-g39,Prayer rollEngland,,1500
+g39,Prayer roll,England,1500
 g40,Bible,France,800
 g41,Comoediae,Italy,1480
-g42,BibleEngland,,1265
-g43,PsalterEngland,,1180
+g42,Bible,England,1265
+g43,Psalter,England,1180
 g44,Lectionary,Austria,1050
 g46,Manuscript single leaf with miniature,Belgium,1510
-g47,Doctor’s folding almanacEngland,,1464
-g49,,,
-g50,Book of HoursEngland,,1316,1331
+g47,Doctor’s folding almanac,England,1464
+g50,Book of Hours,England,1316,1331
 g52,Jeu des échecs moralisé,France,1350,1360
-g53,PsalterEngland,,1310,1320
+g53,Psalter,England,1310,1320
 g57,Sacramentary,France,
 g59,Book of Hours,France,1300
 g60,Bible,Italy,1300
 g61,Facta et dicta memorabilia / Valerius Maximus,Italy,1440
 g62,Psalter,Italy,1000
 g64,Bible,Belgium,1270
-g65,De officiisEngland,,1150,1199
+g65,De officiis,England,1150,1199
 g67,Acts of the Apostles,Egypt,400
 g73,Psalter,Germany,1250
 g74,De balneis Puteolanis,Italy,1400
@@ -72,7 +70,7 @@ h5,Book of Hours,France,1500
 h7,Book of Hours,Belgium,1470
 m2,Book of Hours,France,1400
 m3,Book of Hours,Italy,1400
-m4,LiteraryEngland,,1450
+m4,Literary,England,1450
 m5,Lectionary,Belgium,1500,1550
 m6,Book of Hours,France,1480
 m7,Book of Hours,France,1490,1500
@@ -95,37 +93,27 @@ m29,Psalter-Hours,France,1460
 m30,Book of Hours,Belgium,1470
 m31,Book of Hours,France,1500,1525
 m32,Book of hours,France,1470
-m33,,,
 m34,Psalter,Netherlands,1290
 m38,Histoire du Saint-Grail,Belgium,1479
 m40,Roman du lis,France,1350,1375
 m41,Roman de Tristan,France,1468
-m42,,,
-m43,PsalterEngland,,1212,1220
+m43,Psalter,England,1212,1220
 m44,Vita Christi (Life of Christ),France,1175
 m45a,The Crucifixion and St/ Leonard,Germany,1457
 m45e,The Crucifixion and St/ Leonard,Germany,1457
 m46,Book of Hours,Belgium,1420
 m48,Roman de la Rose,France,1340,1350
 m52,Breviary,Belgium,1500
-m53,,,
 m55,Vita et miraculae sancti Benedicti,Austria,1300
 m56,Book of Hours,Italy,1450,1475
-m57,,,
-m58,,,
-m59,,,
 m60,Book of Hours,France,1300
 m61,Book of Hours,France,1525
 m61a,Bible,France,1400
-m62,,,
-m63,,,
 m64,Book of Hours,France,1430
 m65,Bible,France,1225,1250
 m66,Bible,France,1225,1250
 m67,Psalter-Hours,France,1455,1460
 m68,Lectionary,Belgium,1470
-cover,,,
-m69,,,
 m71,Book of Hours,Netherlands,1460,1520
 m72,Psalter,Belgium,1270,1280
 m73,Book of Hours,France,1470
@@ -152,15 +140,15 @@ m94,Psalter-Hours,Germany,1250,1274
 m95,MissalNorthern ,Italy,1461,1479
 m97,Psalter-Hours,France,1265
 m98,Psalter,France,1275,1299
-m99,Book of HoursEngland,,1405,1415
-m100,PsalterEngland,,1290,1300
+m99,Book of Hours,England,1405,1415
+m100,Psalter,England,1290,1300
 m101,Psalter,France,
-m102,PsalterEngland,,1200
-m103,PsalterEngland,,1250
+m102,Psalter,England,1200
+m103,Psalter,England,1250
 m104,Book of Hours,Belgium,1450,1460
 m105,Book of Hours,France,1420,1425
 m106,Psalter,Belgium,1256
-m107,MissalEngland,,1320
+m107,Missal,England,1320
 m108,Bonus socius,France,1300
 m109,Bible,France,1260
 m110,Bible,France,1260
@@ -173,9 +161,9 @@ m117,Book of HoursBrittany/ ,France,1440,1450,1500,1510
 m118,De historia plantarum et De causis plantarum,Italy,1523,1534
 m119,L’histoire de Jason,Belgium,1470
 m120,Roman de la Rose,France,1370
-m124,LiteraryEngland,,1460
-m125,LiteraryEngland,,1425,1450
-m126,LiteraryEngland,,1470
+m124,Literary,England,1460
+m125,Literary,England,1425,1450
+m126,Literary,England,1470
 m130,Book of Hours,France,1480
 m131,Book of Hours,France,1480
 m132,Roman de la Rose,France,1380
@@ -188,7 +176,6 @@ m141,Book of Hours,France,1390,1400
 m144,Book of Hours,France,1490
 m146,Missal,France,1427
 m147,Poème sur la Passion,France,1530
-m149,,,
 m151,Book of Hours,France,1500
 m152,Book of Hours,Belgium,1470
 m153,Psalter-Hours,France,1228,1234
@@ -251,7 +238,7 @@ m219,Book of Hours,France,1500
 m220,Book of Hours,France,1500
 m222,Literary,France,1465
 m223,Bucolica and other works,Italy,1455
-m226,Vita Christi (Life of Christ)England,,1450
+m226,Vita Christi (Life of Christ),England,1450
 m227,Book of Hours,Italy,1461
 m229,Book of Hours,France,1375,1400
 m230,Bible,Austria,1435
@@ -259,11 +246,9 @@ m231,Book of Hours,France,1485,1490
 m232,Literary,Belgium,1470
 m234,Book of Hours,Belgium,
 m235,Bible,Syria,1212,1213
-m237,PsalterEngland,,1400
-m238,Book of HoursEngland,,1480
-m239,,,
+m237,Psalter,England,1400
+m238,Book of Hours,England,1480
 m240,Moralized Bible,France,1227,1234
 m241,Book of Hours,France,1435
 m242,Heptameron,France,1560
 m245,Roman de la Rose,France,1405
-m248,Book of Hours,France,1465,1470

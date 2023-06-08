@@ -97,6 +97,7 @@ const countries = [
     'Syria',
     'Tunisia',
     'Turkey',
+    'England',
   
     // Middle East
     'Bahrain',
@@ -182,15 +183,12 @@ function processCSVFile(filePath, outfile) {
     .pipe(csv())
     .on('data', (row) => {
         // Process each row of the CSV file
-        console.log(row);
         const tomb_id = row.tombId;
         const clean = splitAndRemoveMS(row.tomb_text);
-        const book_date = getSubstringAfterCa(clean);
+        const book_date = getSubstringAfterCa(clean).join(',');
         const foundInfo = extractCountry(clean);
-        console.log(foundInfo)
         const book_location = foundInfo.found;
         const book_type = foundInfo.text;
-        console.log(tomb_id, 'id', book_date, 'date', book_location, 'location', book_type, 'type');
         // Perform additional operations on the row as needed
         editedRows.push({ tomb_id, book_date, book_location, book_type });
     })
