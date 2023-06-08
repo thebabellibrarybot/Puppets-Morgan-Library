@@ -185,7 +185,7 @@ function processCSVFile(filePath, outfile) {
         // Process each row of the CSV file
         const tomb_id = row.tombId;
         const clean = splitAndRemoveMS(row.tomb_text);
-        const book_date = getSubstringAfterCa(clean).join(',');
+        const book_date = getSubstringAfterCa(clean)[0];
         const foundInfo = extractCountry(clean);
         const book_location = foundInfo.found;
         const book_type = foundInfo.text;
